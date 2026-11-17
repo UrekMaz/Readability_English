@@ -108,20 +108,6 @@ A full snapshot of the earlier experiment folder `ncert_readability/` (16 May �
   - `results_no_trunc_3level/`, `results_no_trunc_3level_3level/` — 3-level classifier runs
 - **Figures:** ablation plots (`ablation_*.png/pdf`), Cohen's d with and without truncation, CV fold diagrams (`fold.drawio`, `fold_1–3.png`, `s fold cv.png`), feature-selection diagram `fs.png`.
 
-## Getting started and open issues
 
-To reproduce the main results, run the final methodology notebook on Kaggle or Colab (GPU helps for the transformer baselines and D9 metaphor model).
 
-1. Upload `data/english_supp_14.05.26_cleant.xlsx`, `data/final_telangana_dataset.xlsx`, `onestop_coh.csv` (from the zip) and the LingFeat baseline file as a Kaggle dataset.
-2. Edit the paths in Section 1 (`CSV_PATH`, `LINGFEAT_PATH`, `OSE_PATH`, `TELANGANA_PATH`, `CKPT_DIR`) to point at your copies.
-3. Install the packages Section 0 imports: pandas, numpy, scipy, scikit-learn, xgboost, lightgbm, mord, textstat, torch, transformers, sentencepiece, seaborn, matplotlib (plus imblearn and smote_variants for the upsampling notebook).
-4. For new texts, run the extractors in `features/`. They also need spaCy, espeak-ng (D1), the `morphemes` package and MorphoLex (D2), wordfreq, NLTK Gutenberg and an Oxford 5000 list (D3), and gensim with a Wikipedia corpus (D8).
 
-Open issues for whoever takes over:
-
-- [ ] Make a first commit; nothing is under version control on `main` yet. Exclude the zip and the backup folder, or use Git LFS.
-- [ ] Delete or archive `readability_english_15.11.26/` (exact duplicate).
-- [ ] Locate the LingFeat baseline file; it is referenced by the notebooks but not in this folder.
-- [ ] Add the missing extractors for D4–D7 and D10, or document which tool produced those columns.
-- [ ] Replace hard-coded `/kaggle/input/...` and `/content/...` paths with relative paths.
-- [ ] Rename files with spaces and copy suffixes (" 1", " (3)") and add a `requirements.txt`.
